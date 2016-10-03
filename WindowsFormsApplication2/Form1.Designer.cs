@@ -48,8 +48,11 @@
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Stol;
             this.ClientSize = new System.Drawing.Size(441, 243);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Наперстушки";
             this.ResumeLayout(false);
 
         }
