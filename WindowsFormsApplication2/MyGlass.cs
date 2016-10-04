@@ -12,7 +12,7 @@ namespace WindowsFormsApplication2
     {
         bool isHasBall;
         Image closedImg, withBallImg, emptyImg;
-        int id;
+        int id; // номер стаканчика
         public bool IsHasBall
         {
             get
@@ -78,6 +78,21 @@ namespace WindowsFormsApplication2
             }
         }
 
-        
+        public MyGlass(int id) // конструктор, в котором прописываются в полях адреса картинок
+        {
+            IsHasBall = false;
+            ClosedImg = Properties.Resources.Close;
+            WithBallImg = Properties.Resources.OpenedFull;
+            EmptyImg = Properties.Resources.OpenedEmpty;
+            Id = id; // номер стаканчика
+            Image = ClosedImg; // изначально наперсток закрыт
+        }
+        public void OpenGlass()
+        {
+            if (IsHasBall) Image = WithBallImg;
+            else Image = EmptyImg;
+            Size = new Size(100, 100);
+        }
+
     }
 }
