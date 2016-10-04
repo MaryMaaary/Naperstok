@@ -86,6 +86,18 @@ namespace WindowsFormsApplication2
             EmptyImg = Properties.Resources.OpenedEmpty;
             Id = id; // номер стаканчика
             Image = ClosedImg; // изначально наперсток закрыт
+            Click += GlassClick;
+        }
+        public void GlassClick(object sender, EventArgs e) // метод нажать на стакан
+        {
+            if (Image == ClosedImg)
+            {
+                OpenGlass();
+            }
+            else
+            {
+                CloseGlass();
+            }
         }
         public void OpenGlass()
         {
@@ -93,6 +105,10 @@ namespace WindowsFormsApplication2
             else Image = EmptyImg;
             Size = new Size(100, 100);
         }
-
+        public void CloseGlass()
+        {
+            Image = ClosedImg;
+            Size = new Size(80, 100);
+        }
     }
 }
