@@ -78,39 +78,6 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public MyGlass(int id)
-        {
-            IsHasBall = false;
-            ClosedImg = Properties.Resources.Close;
-            WithBallImg = Properties.Resources.OpenedFull;
-            EmptyImg = Properties.Resources.OpenedEmpty;
-            Id = id;
-            Image = ClosedImg;
-            Click += GlassClick;
-        }
-        public void GlassClick(object sender, EventArgs e)
-        {
-            if (Image == ClosedImg)
-            {
-                OpenGlass();
-            }
-            else
-            {
-                CloseGlass();
-            }
-        }
-        public void OpenGlass()
-        {
-            if (IsHasBall) Image = WithBallImg;
-            else Image = EmptyImg;
-            Size = new Size(100, 100);
-        }
-
-
-        public void CloseGlass()
-        {
-            Image = ClosedImg;
-            Size = new Size(80, 100);
-        }
+        
     }
 }
