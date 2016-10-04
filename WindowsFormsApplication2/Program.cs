@@ -9,7 +9,7 @@ namespace WindowsFormsApplication2
     static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Главная точка входа для приложения. Хорошо
         /// </summary>
         [STAThread]
         static void Main()
