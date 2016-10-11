@@ -82,7 +82,7 @@ namespace WindowsFormsApplication2
             t3.Start();
 
         }
-        void StartMovement1()// метод для потока 1
+        void StartMovement6()// метод для потока 1
         {
             HelperDelegate1 = new Helper(MotionFirst);
             while (go1)
