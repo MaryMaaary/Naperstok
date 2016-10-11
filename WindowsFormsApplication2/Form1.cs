@@ -26,7 +26,7 @@ namespace WindowsFormsApplication2
             glass2 = new MyGlass(2);
             glass3 = new MyGlass(3);
 
-            glass1.Size = new Size(150, 180);
+            glass1.Size = new Size(160, 180);
             glass2.Size = new Size(150, 180);
             glass3.Size = new Size(150, 180);
 
@@ -111,7 +111,7 @@ namespace WindowsFormsApplication2
                 Invoke(HelperDelegate3);
             }
         }
-        void MotionFirst() // метод к делегату StartMovement6 
+        void MotionFirst() // метод к делегату StartMovement
         {
             if (glass1.Location.X > mas1[0])
             {
