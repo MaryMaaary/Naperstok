@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing; // Пространство имен для картинок
-using System.Windows.Forms; // пространство имен содержит классы для создания приложений Windows
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
     class MyGlass:PictureBox
     {
-        bool isHasBall; // булевая переменная, которая говорит нам, есть ли в наперстке шарик
-        Image closedImg, withBallImg, emptyImg; // название картинок : закрытый наперсток, открытый наперсток с шариком, открытый наперсток пустой
-        int id; // номер наперстка
-        public bool IsHasBall // свойство переменной "есть ли в наперстке шарик"
+        bool isHasBall;
+        Image closedImg, withBallImg, emptyImg;
+        int id; // номер стаканчика
+        public bool IsHasBall
         {
             get
             {
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public Image ClosedImg // свойство картинки "закрытый наперсток"
+        public Image ClosedImg
         {
             get
             {
@@ -39,7 +39,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public Image WithBallImg // свойство картинки "открытый наперсток с шариком"
+        public Image WithBallImg
         {
             get
             {
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public Image EmptyImg // свойство картинки " открытый пустой наперсток"
+        public Image EmptyImg
         {
             get
             {
@@ -65,7 +65,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public int Id // свойство целочисленной переменной, обозначающей номер наперстка
+        public int Id
         {
             get
             {
@@ -80,13 +80,13 @@ namespace WindowsFormsApplication2
 
         public MyGlass(int id) // конструктор, в котором прописываются в полях адреса картинок
         {
-            IsHasBall = false; // изначально наперсток пуст
-            ClosedImg = Properties.Resources.Close; // ссылка на картинку. Все картинки хранятся в ресурсах
-            WithBallImg = Properties.Resources.OpenedFull; // ссылка на картинку. Все картинки хранятся в ресурсах
-            EmptyImg = Properties.Resources.OpenedEmpty; // ссылка на картинку. Все картинки хранятся в ресурсах
-            Id = id; // номер наперстка
+            IsHasBall = false;
+            ClosedImg = Properties.Resources.Close;
+            WithBallImg = Properties.Resources.OpenedFull;
+            EmptyImg = Properties.Resources.OpenedEmpty;
+            Id = id; // номер стаканчика
             Image = ClosedImg; // изначально наперсток закрыт
-            Click += GlassClick; //обработчик события клик
+            Click += GlassClick;
         }
         public void GlassClick(object sender, EventArgs e) // метод нажать на стакан
         {
