@@ -15,7 +15,7 @@ namespace WindowsFormsApplication2
         public delegate void Helper();
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
-
+        Thread t1, t2, t3;
        
 
         public MainForm()
@@ -60,6 +60,29 @@ namespace WindowsFormsApplication2
             glass1.CloseGlass();
             glass2.CloseGlass();
             glass3.CloseGlass();
+        }
+        bool go1, go2, go3;
+        int[] mas1;
+        void Rotate()
+        {
+            go1 = true;
+            go2 = true;
+            go3 = true;
+            int[] mas0 = new int[] { 130, 230, 330 };
+            Random rndom = new Random();
+            mas1 = mas0.OrderBy(item => rndom.Next()).ToArray();
+            //mas1 = new int[] { 330, 130, 230 };
+            t1 = new Thread();
+            t2 = new Thread();
+            t3 = new Thread();
+            t1.IsBackground = true;
+            t2.IsBackground = true;
+            t3.IsBackground = true;
+            t1.Start();
+            t2.Start();
+            t3.Start();
+
+
         }
     }
 }
