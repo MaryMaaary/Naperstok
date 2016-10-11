@@ -43,8 +43,8 @@ namespace WindowsFormsApplication2
             glass2.BackColor = Color.Transparent;
             glass3.BackColor = Color.Transparent;
 
-            Random rnd = new Random();
-            int num = rnd.Next(1, 4);
+            Random random = new Random(); // рандомная переменная
+            int num = random.Next(1, 4);
             if (glass1.Id == num) glass1.IsHasBall = true;
             if (glass2.Id == num) glass2.IsHasBall = true;
             if (glass3.Id == num) glass3.IsHasBall = true;
