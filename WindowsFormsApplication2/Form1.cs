@@ -24,9 +24,9 @@ namespace WindowsFormsApplication2
 
             glass1 = new MyGlass(1);
             glass2 = new MyGlass(2);
-            glass3 = new MyGlass(3);
+            glass3 = new MyGlass(3); // добавила текст
 
-            glass1.Size = new Size(160, 180);
+            glass1.Size = new Size(170, 180);
             glass2.Size = new Size(150, 180);
             glass3.Size = new Size(150, 180);
 
