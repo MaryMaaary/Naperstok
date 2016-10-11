@@ -68,13 +68,12 @@ namespace WindowsFormsApplication2
             go1 = true;
             go2 = true;
             go3 = true;
-            int[] mas0 = new int[] { 130, 230, 330 };
+            int[] mas0 = new int[] { 90, 190, 290 };
             Random rndom = new Random();
-            mas1 = mas0.OrderBy(item => rndom.Next()).ToArray();
-            //mas1 = new int[] { 330, 130, 230 };
-            t1 = new Thread();
-            t2 = new Thread();
-            t3 = new Thread();
+            mas1 = mas0.OrderBy(item => rndom.Next()).ToArray(); //конструкция позволяет перемешать массив рандомно из элементов mas0. результат записывается в новый массив
+            t1 = new Thread(StartMovement1);
+            t2 = new Thread(StartMovement2);
+            t3 = new Thread(StartMovement3);
             t1.IsBackground = true;
             t2.IsBackground = true;
             t3.IsBackground = true;
@@ -82,7 +81,35 @@ namespace WindowsFormsApplication2
             t2.Start();
             t3.Start();
 
+        }
+        void StartMovement1()
+        {
+            HelperDelegate1 = new Helper(MotionFirst);
+            while (go1)
+            {
+                Thread.Sleep(3000);
+                Invoke(HelperDelegate1);
+            }
 
+        }
+        void StartMovement2()
+        {
+            HelperDelegate2 = new Helper(MotionSecond);
+            while (go2)
+            {
+                Thread.Sleep(2000);
+                Invoke(HelperDelegate2);
+            }
+
+        }
+        void StartMovement3()
+        {
+            HelperDelegate3 = new Helper(MotionThird);
+            while (go3)
+            {
+                Thread.Sleep(1000);
+                Invoke(HelperDelegate3);
+            }
         }
     }
 }
