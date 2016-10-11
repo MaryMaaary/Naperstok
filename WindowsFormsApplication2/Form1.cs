@@ -16,7 +16,7 @@ namespace WindowsFormsApplication2
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
         Thread t1, t2, t3;
-       
+
 
         public MainForm()
         {
@@ -37,7 +37,7 @@ namespace WindowsFormsApplication2
             glass1.Location = new Point(90, 50);
             glass2.Location = new Point(190, 50);
             glass3.Location = new Point(290, 50);
-            
+
 
             glass1.BackColor = Color.Transparent;
             glass2.BackColor = Color.Transparent;
@@ -109,6 +109,13 @@ namespace WindowsFormsApplication2
             {
                 Thread.Sleep(1000);
                 Invoke(HelperDelegate3);
+            }
+        }
+        void MotionFirst() // метод к делегату StartMovement6 
+        {
+            if (glass1.Location.X > mas1[0])
+            {
+                glass1.Location = new Point(glass1.Location.X - 1, glass1.Location.Y);
             }
         }
     }
