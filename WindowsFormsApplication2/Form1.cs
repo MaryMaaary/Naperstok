@@ -62,7 +62,12 @@ namespace WindowsFormsApplication2
             glass2.CloseGlass();
             glass3.CloseGlass();
         }
-        bool go1, go2, go3;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+       /* bool go1, go2, go3;
         int[] mas1;
         void Rotate()
         {
@@ -83,7 +88,7 @@ namespace WindowsFormsApplication2
             t3.Start();
 
         }
-        void StartMovement1()// метод для потока 1
+       void StartMovement1()// метод для потока 1
         {
             HelperDelegate1 = new Helper(MotionFirst);
             while (go1)
@@ -118,6 +123,6 @@ namespace WindowsFormsApplication2
             {
                 glass1.Location = new Point(glass1.Location.X - 1, glass1.Location.Y);
             }
-        }
+        }*/
     }
 }
