@@ -16,6 +16,7 @@ namespace WindowsFormsApplication2
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
         Thread t1, t2, t3;
+        string name;
 
 
         public MainForm()
@@ -65,7 +66,21 @@ namespace WindowsFormsApplication2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e) // метод происходит, когда отпускается клавиша, если элемент управления имеет фокус
+        {
+           if (e.KeyCode==Keys.Enter) // если мы нажали и отпустили клавишу Enter система пишет "Привет, (имя пользователя)
+           {
+            name = textBox1.Text; // (имя пользователя) это текст, который пользователь вводит в поле "введите имя"
+            MessageBox.Show("Привет," +name +"!"); // система выводит "Привет, (имя пользователя)!"
+           }
         }
        /* bool go1, go2, go3;
         int[] mas1;
