@@ -8,7 +8,7 @@ using System.Windows.Forms; // пространство имен содержи�
 
 namespace WindowsFormsApplication2
 {
-    class MyGlass : PictureBox
+    public class MyGlass : PictureBox
     {
         bool isHasBall; // булевая переменная, которая говорит нам, есть ли в наперстке шарик
         Image closedImg, withBallImg, emptyImg; // название картинок : закрытый наперсток, открытый наперсток с шариком, открытый наперсток пустой
@@ -109,6 +109,11 @@ namespace WindowsFormsApplication2
         {
             Image = ClosedImg;
             Size = new Size(80, 100);
+        }
+        public string getname (string name)
+        {
+            name = "Name";
+            return name;
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WindowsFormsApplication2;
+
 
 namespace UnitTest
 {
@@ -9,7 +11,8 @@ namespace UnitTest
         [TestMethod]
         public void CheckName()
         {
-            string name;
+            MyGlass classic = new MyGlass(2);
+            Assert.AreEqual("Name", classic.getname(""));
         }
     }
 }

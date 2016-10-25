@@ -15,7 +15,7 @@ namespace WindowsFormsApplication2
         public delegate void Helper();
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
-        Thread t1, t2, t3;
+        //Thread t1, t2, t3;//
         string name;
 
 
@@ -73,8 +73,7 @@ namespace WindowsFormsApplication2
         {
            
         }
-
-        private void textBox1_KeyUp(object sender, KeyEventArgs e) // метод происходит, когда отпускается клавиша, если элемент управления имеет фокус
+        public void textBox1_KeyUp(object sender, KeyEventArgs e) // метод происходит, когда отпускается клавиша, если элемент управления имеет фокус
         {
            if (e.KeyCode==Keys.Enter) // если мы нажали и отпустили клавишу Enter система пишет "Привет, (имя пользователя)
            {
