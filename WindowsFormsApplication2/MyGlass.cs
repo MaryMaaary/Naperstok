@@ -110,10 +110,14 @@ namespace WindowsFormsApplication2
             Image = ClosedImg;
             Size = new Size(80, 100);
         }
-        public string getname (string name)
+        public string getname(string name)
         {
             name = "Name";
             return name;
+        }
+        public int summa(int a, int b)
+        {
+            return a + b;
         }
     }
 }
