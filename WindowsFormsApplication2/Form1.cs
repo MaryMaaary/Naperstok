@@ -81,7 +81,7 @@ namespace WindowsFormsApplication2
             MessageBox.Show("Привет," +name +"!"); // система выводит "Привет, (имя пользователя)!"
            }
         }
-       /* bool go1, go2, go3;
+       bool go1, go2, go3;
         int[] mas1;
         void Rotate()
         {
@@ -137,6 +137,6 @@ namespace WindowsFormsApplication2
             {
                 glass1.Location = new Point(glass1.Location.X - 1, glass1.Location.Y);
             }
-        }*/
+        }
     }
 }
