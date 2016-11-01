@@ -62,6 +62,7 @@ namespace WindowsFormsApplication2
             glass1.CloseGlass();
             glass2.CloseGlass();
             glass3.CloseGlass();
+            Rotate();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace WindowsFormsApplication2
             HelperDelegate1 = new Helper(MotionFirst);
             while (go1)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(300);
                 Invoke(HelperDelegate1);
             }
 
@@ -117,7 +118,7 @@ namespace WindowsFormsApplication2
             HelperDelegate2 = new Helper(MotionSecond);
             while (go2)
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(200);
                 Invoke(HelperDelegate2);
             }
 
@@ -127,7 +128,7 @@ namespace WindowsFormsApplication2
             HelperDelegate3 = new Helper(MotionThird);
             while (go3)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
                 Invoke(HelperDelegate3);
             }
         }
