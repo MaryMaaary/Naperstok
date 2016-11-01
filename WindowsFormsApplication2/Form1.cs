@@ -15,7 +15,7 @@ namespace WindowsFormsApplication2
         public delegate void Helper();
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
-        //Thread t1, t2, t3;//
+        Thread t1, t2, t3;
         string name;
 
 
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication2
             MessageBox.Show("Привет," +name +"!"); // система выводит "Привет, (имя пользователя)!"
            }
         }
-       /* bool go1, go2, go3;
+       bool go1, go2, go3;
         int[] mas1;
         void Rotate()
         {
@@ -131,12 +131,43 @@ namespace WindowsFormsApplication2
                 Invoke(HelperDelegate3);
             }
         }
-        void MotionFirst() // метод к делегату StartMovement
+        void MotionFirst()
         {
             if (glass1.Location.X > mas1[0])
             {
+
+
                 glass1.Location = new Point(glass1.Location.X - 1, glass1.Location.Y);
+
             }
-        }*/
+            else
+                if (glass1.Location.X < mas1[0])
+                {
+
+                    glass1.Location = new Point(glass1.Location.X + 1, glass1.Location.Y);
+
+                }
+            if (glass1.Location.X == mas1[0]) go1 = false;
+        }
+        void MotionSecond()
+        {
+            if (glass2.Location.X > mas1[1])
+            {
+
+
+                glass2.Location = new Point(glass2.Location.X - 1, glass2.Location.Y);
+
+
+            }
+            else
+                if (glass2.Location.X < mas1[1])
+                {
+
+                    glass2.Location = new Point(glass2.Location.X + 1, glass2.Location.Y);
+
+
+                }
+            if (glass2.Location.X == mas1[1]) go2 = false;
+        }
     }
 }
