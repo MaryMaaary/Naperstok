@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace ClassLibrary1
 {
     partial class MainForm
     {
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Stol;
+            this.BackgroundImage = global::ClassLibrary1.Properties.Resources.Stol;
             this.ClientSize = new System.Drawing.Size(441, 243);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);

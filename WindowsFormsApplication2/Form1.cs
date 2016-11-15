@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ClassLibrary1;
 
-namespace WindowsFormsApplication2
+namespace ClassLibrary1
 {
     public partial class MainForm : Form
     {

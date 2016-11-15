@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WindowsFormsApplication2;
+using ClassLibrary1;
 
 
 namespace UnitTest
