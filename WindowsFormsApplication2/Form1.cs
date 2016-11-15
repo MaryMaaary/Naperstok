@@ -62,6 +62,7 @@ namespace WindowsFormsApplication2
             glass1.CloseGlass();
             glass2.CloseGlass();
             glass3.CloseGlass();
+
             Rotate();
         }
 
@@ -108,7 +109,7 @@ namespace WindowsFormsApplication2
             HelperDelegate1 = new Helper(MotionFirst);
             while (go1)
             {
-                Thread.Sleep(300);
+                Thread.Sleep(30);
                 Invoke(HelperDelegate1);
             }
 
@@ -118,7 +119,7 @@ namespace WindowsFormsApplication2
             HelperDelegate2 = new Helper(MotionSecond);
             while (go2)
             {
-                Thread.Sleep(200);
+                Thread.Sleep(20);
                 Invoke(HelperDelegate2);
             }
 
@@ -128,7 +129,7 @@ namespace WindowsFormsApplication2
             HelperDelegate3 = new Helper(MotionThird);
             while (go3)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(10);
                 Invoke(HelperDelegate3);
             }
         }
