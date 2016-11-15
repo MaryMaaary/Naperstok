@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
+      <Project>{cd61ca8a-a10f-4b7b-98d0-eda3fa307d33}</Project>
+      <Name>ClassLibrary1</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WindowsFormsApplication2\WindowsFormsApplication2.csproj">
       <Project>{24c2b50b-e95b-4430-861d-122129911f02}</Project>
       <Name>WindowsFormsApplication2</Name>
