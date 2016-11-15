@@ -17,7 +17,7 @@ namespace ClassLibrary1
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
         Thread t1, t2, t3;
-        string name;
+        string name;//
 
 
         public MainForm()
