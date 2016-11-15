@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing; // Пространство имен для картинок
 using System.Windows.Forms; // пространство имен содержит классы для создания приложений Windows
 
-namespace WindowsFormsApplication2
+namespace ClassLibrary1
 {
     public class MyGlass : PictureBox
     {
