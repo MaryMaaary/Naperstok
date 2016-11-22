@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClassLibrary1.Properties {
+namespace Library1.Properties {
     using System;
     
     

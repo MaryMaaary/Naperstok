@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using ClassLibrary1;
+using Library1;
 
 namespace ClassLibrary1
 {
