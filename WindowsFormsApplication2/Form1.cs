@@ -16,9 +16,8 @@ namespace ClassLibrary1
         public delegate void Helper();
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
-        Thread t1, t2, t3; // потоки, описывающие движение наперстков
-        string name;//имя пользователя
-
+        Thread t1, t2, t3;
+        string name;
 
         int counter = 0;//+ 1
         public int Counter //+2
@@ -74,33 +73,46 @@ namespace ClassLibrary1
             glass3.Click += Checker;//+5
 
         }
+
+        private void Checker(object sender, EventArgs e)//+6
+        {
+            if (isAllow)
+            {
+                MyGlass temp = sender as MyGlass;//+7
+                if (temp.IsHasBall && temp.Image == temp.WithBallImg && go1 == false && go2 == false && go3 == false)
+                    Counter++; //+8
+                isAllow = false;
+            }
+        }
+
         private void goButton_Click(object sender, EventArgs e)
         {
+
             glass1.CloseGlass();
             glass2.CloseGlass();
             glass3.CloseGlass();
-
+            isAllow = true;
             Rotate();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-           
+
         }
         public void textBox1_KeyUp(object sender, KeyEventArgs e) // метод происходит, когда отпускается клавиша, если элемент управления имеет фокус
         {
-           if (e.KeyCode==Keys.Enter) // если мы нажали и отпустили клавишу Enter система пишет "Привет, (имя пользователя)
-           {
-            name = textBox1.Text; // (имя пользователя) это текст, который пользователь вводит в поле "введите имя"
-            MessageBox.Show("Привет," +name +"!"); // система выводит "Привет, (имя пользователя)!"
-           }
+            if (e.KeyCode == Keys.Enter) // если мы нажали и отпустили клавишу Enter система пишет "Привет, (имя пользователя)
+            {
+                name = textBox1.Text; // (имя пользователя) это текст, который пользователь вводит в поле "введите имя"
+                MessageBox.Show("Привет," + name + "!"); // система выводит "Привет, (имя пользователя)!"
+            }
         }
-       bool go1, go2, go3;
+        bool go1, go2, go3;
         int[] mas1;
         void Rotate()
         {
@@ -121,7 +133,7 @@ namespace ClassLibrary1
             t3.Start();
 
         }
-       void StartMovement1()// метод для потока 1
+        void StartMovement1()// метод для потока 1
         {
             HelperDelegate1 = new Helper(MotionFirst);
             while (go1)
@@ -207,5 +219,6 @@ namespace ClassLibrary1
                 }
             if (glass3.Location.X == mas1[2]) go3 = false;
         }
+
     }
 }
