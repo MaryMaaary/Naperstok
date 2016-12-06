@@ -16,10 +16,21 @@ namespace ClassLibrary1
         public delegate void Helper();
         public Helper HelperDelegate1, HelperDelegate2, HelperDelegate3;
         MyGlass glass1, glass2, glass3;
-        Thread t1, t2, t3;
-        string name;//
+        Thread t1, t2, t3; // потоки, описывающие движение наперстков
+        string name;//имя пользователя
 
 
+        int counter = 0;//+ 1
+        public int Counter //+2
+        {
+            get { return counter; }
+            set
+            {
+                ScoreLbl.Text = Convert.ToString(value);
+                counter = value;
+            }
+        }
+        bool isAllow = true;
         public MainForm()
         {
             InitializeComponent();
