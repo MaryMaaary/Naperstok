@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ScoreLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCreateDatabase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -85,12 +86,23 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Счет";
             // 
+            // btnCreateDatabase
+            // 
+            this.btnCreateDatabase.Location = new System.Drawing.Point(9, 9);
+            this.btnCreateDatabase.Name = "btnCreateDatabase";
+            this.btnCreateDatabase.Size = new System.Drawing.Size(103, 23);
+            this.btnCreateDatabase.TabIndex = 8;
+            this.btnCreateDatabase.Text = "Create Database";
+            this.btnCreateDatabase.UseVisualStyleBackColor = true;
+            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ClassLibrary1.Properties.Resources.Stol;
             this.ClientSize = new System.Drawing.Size(441, 243);
+            this.Controls.Add(this.btnCreateDatabase);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ScoreLbl);
             this.Controls.Add(this.label1);
@@ -113,6 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ScoreLbl;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCreateDatabase;
     }
 }
 

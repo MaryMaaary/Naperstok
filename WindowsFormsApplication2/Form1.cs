@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Library1;
+using System.Data.SqlClient; // пространство имен для создания базы данных
+
+
 
 namespace ClassLibrary1
 {
@@ -219,6 +222,38 @@ namespace ClassLibrary1
                 }
             if (glass3.Location.X == mas1[2]) go3 = false;
         }
+
+        private void btnCreateDatabase_Click(object sender, EventArgs e)
+        {
+
+           SqlConnection cn = new SqlConnection("server=SAD2023-88;database=test");
+ 
+             SqlCommand cm = new SqlCommand("select * from users" , cn);
+ 
+             try
+             {
+                 cn.Open();
+             }
+             catch (SqlException ex)
+             {
+                 Response.Write(ex.Message);
+                 return;
+             }
+             cm.CommandType = CommandType.Text;
+             SqlDataReader reader = cm.ExecuteReader();
+ 
+            while (reader.Read()){
+             String st=  reader.GetString(0);
+            }
+ 
+);
+ 
+             cn.Close();
+             reader.Close();
+            }
+        }
+
+
 
     }
 }
