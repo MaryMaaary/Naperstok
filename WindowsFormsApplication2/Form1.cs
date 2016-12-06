@@ -68,6 +68,11 @@ namespace ClassLibrary1
             Controls.Add(glass1);
             Controls.Add(glass2);
             Controls.Add(glass3);
+
+            glass1.Click += Checker; //+3
+            glass2.Click += Checker;//+4
+            glass3.Click += Checker;//+5
+
         }
         private void goButton_Click(object sender, EventArgs e)
         {
