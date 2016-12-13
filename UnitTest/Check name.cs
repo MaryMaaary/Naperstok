@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary1;
 
 
-namespace UnitTest
+/*namespace UnitTest
 {
     [TestClass]
     public class UnitTest1
@@ -26,3 +26,4 @@ namespace UnitTest
         }
     }
 }
+*/

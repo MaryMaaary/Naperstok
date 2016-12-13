@@ -116,6 +116,36 @@ namespace ClassLibrary1
             }
         }
         bool go1, go2, go3;
+
+        private void SaveResult_Click(object sender, EventArgs e)
+        {
+            string connectionString = GetConnectionString();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(
+                    "INSERT INTO score VALUES(@name, @points)", con))
+                    {
+                        command.Parameters.Add(new SqlParameter("name", name));
+                        command.Parameters.Add(new SqlParameter("points", counter));
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не записано в базу данных");
+                }
+            }
+        }
+        static private string GetConnectionString()
+        {
+            // To avoid storing the connection string in your code, 
+            // you can retrieve it from a configuration file, using the 
+            // System.Configuration.ConfigurationSettings.AppSettings property 
+            return "Data Source=sql7.freemysqlhosting.net;Initial Catalog=sql7148743;User ID=sql7148743;Password=QndDrwZsf9";
+        }
         int[] mas1;
         void Rotate()
         {
@@ -176,11 +206,11 @@ namespace ClassLibrary1
             }
             else
                 if (glass1.Location.X < mas1[0])
-                {
+            {
 
-                    glass1.Location = new Point(glass1.Location.X + 1, glass1.Location.Y);
+                glass1.Location = new Point(glass1.Location.X + 1, glass1.Location.Y);
 
-                }
+            }
             if (glass1.Location.X == mas1[0]) go1 = false;
         }
         void MotionSecond()
@@ -195,12 +225,12 @@ namespace ClassLibrary1
             }
             else
                 if (glass2.Location.X < mas1[1])
-                {
+            {
 
-                    glass2.Location = new Point(glass2.Location.X + 1, glass2.Location.Y);
+                glass2.Location = new Point(glass2.Location.X + 1, glass2.Location.Y);
 
 
-                }
+            }
             if (glass2.Location.X == mas1[1]) go2 = false;
         }
         void MotionThird()
@@ -214,46 +244,14 @@ namespace ClassLibrary1
             }
             else
                 if (glass3.Location.X < mas1[2])
-                {
+            {
 
 
-                    glass3.Location = new Point(glass3.Location.X + 1, glass3.Location.Y);
+                glass3.Location = new Point(glass3.Location.X + 1, glass3.Location.Y);
 
-                }
+            }
             if (glass3.Location.X == mas1[2]) go3 = false;
         }
 
-        private void btnCreateDatabase_Click(object sender, EventArgs e)
-        {
-
-           SqlConnection cn = new SqlConnection("server=SAD2023-88;database=test");
- 
-             SqlCommand cm = new SqlCommand("select * from users" , cn);
- 
-             try
-             {
-                 cn.Open();
-             }
-             catch (SqlException ex)
-             {
-                 Response.Write(ex.Message);
-                 return;
-             }
-             cm.CommandType = CommandType.Text;
-             SqlDataReader reader = cm.ExecuteReader();
- 
-            while (reader.Read()){
-             String st=  reader.GetString(0);
-            }
- 
-);
- 
-             cn.Close();
-             reader.Close();
-            }
-        }
-
-
-
-    }
+     }
 }

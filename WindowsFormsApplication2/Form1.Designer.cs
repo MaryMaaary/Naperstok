@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ScoreLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCreateDatabase = new System.Windows.Forms.Button();
+            this.SaveResult = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -86,15 +86,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Счет";
             // 
-            // btnCreateDatabase
+            // SaveResult
             // 
-            this.btnCreateDatabase.Location = new System.Drawing.Point(9, 9);
-            this.btnCreateDatabase.Name = "btnCreateDatabase";
-            this.btnCreateDatabase.Size = new System.Drawing.Size(103, 23);
-            this.btnCreateDatabase.TabIndex = 8;
-            this.btnCreateDatabase.Text = "Create Database";
-            this.btnCreateDatabase.UseVisualStyleBackColor = true;
-            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
+            this.SaveResult.Location = new System.Drawing.Point(9, 9);
+            this.SaveResult.Name = "SaveResult";
+            this.SaveResult.Size = new System.Drawing.Size(103, 23);
+            this.SaveResult.TabIndex = 8;
+            this.SaveResult.Text = "Сохранить счёт";
+            this.SaveResult.UseVisualStyleBackColor = true;
+            this.SaveResult.Click += new System.EventHandler(this.SaveResult_Click);
             // 
             // MainForm
             // 
@@ -102,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ClassLibrary1.Properties.Resources.Stol;
             this.ClientSize = new System.Drawing.Size(441, 243);
-            this.Controls.Add(this.btnCreateDatabase);
+            this.Controls.Add(this.SaveResult);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ScoreLbl);
             this.Controls.Add(this.label1);
@@ -125,7 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ScoreLbl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCreateDatabase;
+        private System.Windows.Forms.Button SaveResult;
     }
 }
 
