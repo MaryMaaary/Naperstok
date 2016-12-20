@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Library1;
-using System.Data.SqlClient; // пространство имен для создания базы данных
+using MySql.Data.MySqlClient; // пространство имен для создания базы данных
 
 
 
@@ -119,32 +119,28 @@ namespace ClassLibrary1
 
         private void SaveResult_Click(object sender, EventArgs e)
         {
-            string connectionString = GetConnectionString();
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(
-                    "INSERT INTO score VALUES(@name, @points)", con))
-                    {
-                        command.Parameters.Add(new SqlParameter("name", name));
-                        command.Parameters.Add(new SqlParameter("points", counter));
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Не записано в базу данных");
-                }
+                string serverName = "sql7.freemysqlhosting.net"; // Адрес сервера (для локальной базы пишите "localhost")
+                string userName = "sql7148743"; // Имя пользователя
+                string dbName = "sql7148743"; //Имя базы данных
+                string port = "3306"; // Порт для подключения
+                string password = "QndDrwZsf9"; // Пароль для подключения
+                string connStr = "server=" + serverName +
+                    ";user=" + userName +
+                    ";database=" + dbName +
+                    ";port=" + port +
+                    ";password=" + password + ";";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                conn.Open();
+                string sql = "INSERT INTO score(name,points) VALUES('" + this.textBox1.Text + "','" + this.ScoreLbl.Text + "');"; // Строка запроса
+                MySqlScript script = new MySqlScript(conn, sql);
+                script.Execute();
+                conn.Close();
             }
-        }
-        static private string GetConnectionString()
-        {
-            // To avoid storing the connection string in your code, 
-            // you can retrieve it from a configuration file, using the 
-            // System.Configuration.ConfigurationSettings.AppSettings property 
-            return "Data Source=sql7.freemysqlhosting.net;Initial Catalog=sql7148743;User ID=sql7148743;Password=QndDrwZsf9";
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+
         }
         int[] mas1;
         void Rotate()
