@@ -121,11 +121,11 @@ namespace ClassLibrary1
         {
             try
             {
-                string serverName = "sql7.freemysqlhosting.net"; // Адрес сервера (для локальной базы пишите "localhost")
-                string userName = "sql7148743"; // Имя пользователя
-                string dbName = "sql7148743"; //Имя базы данных
+                string serverName = "sql8.freemysqlhosting.net"; // Адрес сервера (для локальной базы пишите "localhost")
+                string userName = "sql8150257"; // Имя пользователя
+                string dbName = "sql8150257"; //Имя базы данных
                 string port = "3306"; // Порт для подключения
-                string password = "QndDrwZsf9"; // Пароль для подключения
+                string password = "SI4NXglsNY"; // Пароль для подключения
                 string connStr = "server=" + serverName +
                     ";user=" + userName +
                     ";database=" + dbName +
